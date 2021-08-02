@@ -1,8 +1,8 @@
 import { FaReceipt, FaHome, FaBuilding, FaGift, FaGavel } from "react-icons/fa";
 
-interface MenuItem {
+type MenuItem = {
   title: string;
-  icon: React.ReactElement;
+  icon: JSX.Element;
 }
 const menuItems: MenuItem[] = [
   { title: "Home", icon: <FaHome /> },
@@ -12,11 +12,11 @@ const menuItems: MenuItem[] = [
   { title: "Payments", icon: <FaReceipt /> },
 ];
 
-function MenuItem(props: any) {
+function MenuLink(props: any) {
   const item: MenuItem = props.item;
   return (
     <a
-      href="#"
+      href="/"
       className="w-full text-gray-800 dark:text-white flex items-center pl-6 p-2 my-2 transition-colors duration-200 justify-start"
     >
       <span className="text-left">{item.icon}</span>
@@ -32,7 +32,7 @@ export default function Sidebar() {
       <nav className="mt-6">
         <div>
           {menuItems.map((item: MenuItem) => (
-            <MenuItem item={item} />
+            <MenuLink item={item} />
           ))}
         </div>
       </nav>

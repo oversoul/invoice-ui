@@ -1,5 +1,6 @@
 import { FaSearch } from "react-icons/fa";
 
+// eslint-disable-next-line
 function Header2() {
   return (
     <header className="w-full shadow-sm bg-white dark:bg-gray-700 items-center h-16 rounded-2xl z-40">
@@ -19,7 +20,7 @@ function Header2() {
             </div>
           </div>
           <div className="relative p-1 flex items-center justify-end w-1/4 ml-5 mr-4 sm:mr-0 sm:right-auto">
-            <a href="#" className="block relative">
+            <a href="/" className="block relative">
               <img
                 alt="profil"
                 src="https://i.pravatar.cc/100"
@@ -42,7 +43,7 @@ export default function Header() {
             <div className="pl-2 font-semibold text-gray-700">Payments</div>
           </div>
           <div className="relative p-1 flex items-center justify-end w-1/4 ml-5 mr-4 sm:mr-0 sm:right-auto">
-            <a href="#" className="block relative">
+            <a href="/" className="block relative">
               <img
                 alt="profil"
                 src="https://i.pravatar.cc/100"
