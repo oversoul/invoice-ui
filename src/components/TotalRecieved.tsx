@@ -9,7 +9,7 @@ export default function TotalRecieved() {
         <p className="text-gray-800 text-4xl font-medium my-2">
           <sup className="text-gray-500 text-xl">$</sup> 84,254<span className="text-gray-500">.58</span>
         </p>
-        <Status title="+10 since last month" hasBg color="green" icon={<span />} />
+        <Status title="+10 since last month" hasBg color="green" />
       </div>
       <div className="ml-4">
         <Status title="Pending" color="blue" icon={<FaCircle size={8} />} />

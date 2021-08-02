@@ -1,11 +1,11 @@
 import React from "react";
 
-interface Props {
+type Props = {
   title: string;
   color: string;
   hasBg?: boolean;
-  icon: React.ReactElement;
-}
+  icon?: React.ReactElement;
+};
 export default function Status(props: Props) {
   const bg: string = props.hasBg ? `py-1 px-2 bg-${props.color}-100` : "";
   return (
