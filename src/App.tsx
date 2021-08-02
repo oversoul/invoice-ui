@@ -6,6 +6,9 @@ import InvoiceTable from "./components/InvoiceTable";
 import SideDialog from "./components/SideDialog";
 import { useState } from "react";
 import InvoiceForm from "./components/InvoiceForm";
+import InvoiceFormActions from "./components/InvoiceFormActions";
+import CenterDialog from "./components/CenterDialog";
+import ActionButton from "./components/ActionButton";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +24,20 @@ function App() {
           onChange={(v: boolean) => setIsOpen(v)}
         >
           <InvoiceForm />
+          <InvoiceFormActions />
         </SideDialog>
+        <CenterDialog
+          header={
+            <h3 className="text-lg leading-6 font-medium text-gray-900">
+              Deactivate account
+            </h3>
+          }
+          footer={
+            <div className="border-t p-3 flex flex-row-reverse">
+              <ActionButton color="gray">Close</ActionButton>
+            </div>
+          }
+        />
         <div className="flex flex-col w-full pl-0 md:p-4 md:space-y-4">
           <Header />
           <div className="overflow-auto h-screen pb-24 pt-2 pr-2 pl-2 md:pt-0 md:pr-0 md:pl-0">

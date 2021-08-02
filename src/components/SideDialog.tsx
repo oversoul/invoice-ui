@@ -33,7 +33,7 @@ const SideDialog = ({ open, onChange, title, children }: IProps) => {
           className="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
         ></div>
 
-        <div className="fixed inset-y-0 right-0 pl-10 max-w-full flex">
+        <div className="fixed inset-y-0 right-0 max-w-full flex">
           {/*
         Slide-over panel, show/hide based on slide-over state.
 
@@ -44,7 +44,7 @@ const SideDialog = ({ open, onChange, title, children }: IProps) => {
           From: "translate-x-0"
           To: "translate-x-full"
 */}
-          <div className="relative w-screen max-w-md">
+          <div className="relative w-screen max-w-xl">
             {/*
           Close button, show/hide based on slide-over state.
 
@@ -67,7 +67,7 @@ const SideDialog = ({ open, onChange, title, children }: IProps) => {
                   <FaTimes />
                 </button>
               </div>
-              <div className="mt-6 relative flex-1 px-4 sm:px-6">
+              <div className="mt-6 relative flex-1 px-4 sm:px-6 flex flex-col">
                 {children}
               </div>
             </div>
