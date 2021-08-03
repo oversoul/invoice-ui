@@ -4,7 +4,7 @@ import Dropdown from "../Dropdown";
 const FilterBar = ({ onSearch }: { onSearch: Function }) => {
   return (
     <div className="flex gap-4">
-      <div className="flex items-center w-full h-full group">
+      <div className="relative flex items-center w-full h-full group">
         <FaSearch className="absolute left-0 hidden w-4 h-4 ml-4 text-gray-500 pointer-events-none fill-current group-hover:text-gray-400 sm:block" />
         <input
           type="text"

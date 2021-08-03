@@ -2,7 +2,7 @@ import { useState } from "react";
 import Status from "../Status";
 import FilterBar from "./FilterBar";
 import FilterableTable from "./FilterableTable";
-import { FaCheck, FaCircle } from "react-icons/fa";
+import { FaCheck, FaCircle, FaTimes } from "react-icons/fa";
 
 type InvoiceProp = { value: string };
 const InvoiceStatus = (props: InvoiceProp) => {
@@ -14,6 +14,7 @@ const InvoiceStatus = (props: InvoiceProp) => {
       break;
     case "Draft":
       color = "yellow";
+      icon = <FaTimes size={8} />;
       break;
     case "Paid":
       color = "green";

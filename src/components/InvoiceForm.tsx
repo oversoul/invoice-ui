@@ -14,8 +14,7 @@ const recipientEmails: Recipient[] = [
 const RecipientUser = ({ value }: { value: Recipient }) => {
   return (
     <span>
-      {value.name}{" "}
-      <small className="text-sm text-gray-300">({value.email})</small>
+      {value.name} <small className="text-sm text-gray-300">({value.email})</small>
     </span>
   );
 };

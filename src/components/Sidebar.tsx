@@ -1,17 +1,17 @@
 import {
-  FaReceipt,
-  FaHome,
-  FaBuilding,
   FaGift,
+  FaHome,
   FaGavel,
-  FaLayerGroup,
+  FaReceipt,
+  FaBuilding,
   FaComments,
+  FaLayerGroup,
   FaQuestionCircle,
 } from "react-icons/fa";
 
 type MenuItem = {
   title: string;
-  icon: JSX.Element;
+  icon: React.ReactNode;
 };
 
 const menuItems: MenuItem[] = [
@@ -27,12 +27,15 @@ const optionItems: MenuItem[] = [
   { title: "Chat with Us", icon: <FaComments /> },
 ];
 
-function MenuLink(props: any) {
-  const item: MenuItem = props.item;
+function MenuLink({ item }: { item: MenuItem }) {
+  const isActiveClass =
+    item.title === "Payments"
+      ? "text-blue-500"
+      : "text-gray-800 hover:text-blue-800";
   return (
     <a
       href="/"
-      className="w-full text-gray-800 dark:text-white flex items-center pl-6 p-4 my-2 justify-start"
+      className={`w-full dark:text-white flex items-center pl-6 p-4 my-2 ${isActiveClass}`}
     >
       <span className="text-lg">{item.icon}</span>
       <span className="mx-2 text-sm font-normal">{item.title}</span>
@@ -48,14 +51,14 @@ export default function Sidebar() {
       </div>
       <nav className="mt-20 flex-1">
         <div>
-          {menuItems.map((item: MenuItem, idx: Number) => (
+          {menuItems.map((item: MenuItem, idx: number) => (
             <MenuLink item={item} key={idx} />
           ))}
         </div>
       </nav>
       <nav className="mb-6">
         <div>
-          {optionItems.map((item: MenuItem, idx: Number) => (
+          {optionItems.map((item: MenuItem, idx: number) => (
             <MenuLink item={item} key={idx} />
           ))}
         </div>

@@ -34,13 +34,13 @@ function Header2() {
   );
 }
 
-export default function Header() {
+const Header = ({ title }: { title: string }) => {
   return (
     <header className="w-full shadow-sm bg-white dark:bg-gray-700 items-center h-16 rounded-2xl">
       <div className="flex flex-col justify-center h-full px-3 mx-auto flex-center">
         <div className="items-center pl-1 flex w-full lg:max-w-68 sm:pr-2 sm:ml-0">
           <div className="container relative items-center left-0 flex w-3/4 h-auto h-full">
-            <div className="pl-2 font-semibold text-gray-700">Payments</div>
+            <div className="pl-2 font-semibold text-gray-700">{title}</div>
           </div>
           <div className="p-1 flex items-center justify-end w-1/4 ml-5 mr-4 sm:mr-0 sm:right-auto">
             <a href="/" className="block">
@@ -55,4 +55,6 @@ export default function Header() {
       </div>
     </header>
   );
-}
+};
+
+export default Header;
