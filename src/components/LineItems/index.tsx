@@ -1,5 +1,5 @@
-import { useReducer, useState } from "react";
-import { FaEllipsisH } from "react-icons/fa";
+import { useEffect, useReducer, useState } from "react";
+import { FaTimes } from "react-icons/fa";
 import TextInput from "../TextInput";
 
 type LineItem = {
@@ -60,19 +60,23 @@ const TableRow = ({ data, onChange, onDelete }: RowProps) => {
             onDelete();
           }}
         >
-          <FaEllipsisH />
+          <FaTimes />
         </button>
       </td>
     </tr>
   );
 };
 
-function reducer(state: any, action: any) {
+const reducer = (state: any, action: any) => {
   switch (action.type) {
     case "add-line": {
       const lines = [...state.lines];
       lines.push({ name: "", price: 0, quantity: 0 });
       return { lines, total: calculateTotal(lines) };
+    }
+
+    case "calculate-total": {
+      return { lines: state.lines, total: calculateTotal(state.lines) };
     }
 
     case "update-line": {
@@ -90,7 +94,7 @@ function reducer(state: any, action: any) {
     default:
       throw new Error();
   }
-}
+};
 
 const calculateTotal = (data: LineItem[]) => {
   return data.reduce((sum, c) => sum + c.price * c.quantity, 0);
@@ -98,6 +102,10 @@ const calculateTotal = (data: LineItem[]) => {
 
 const LineItems = () => {
   const [state, dispatch] = useReducer(reducer, { lines: lines, total: 0 });
+
+  useEffect(() => {
+    dispatch({ type: "calculate-total" });
+  }, []);
 
   return (
     <div className="pb-10">

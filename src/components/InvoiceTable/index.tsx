@@ -44,9 +44,14 @@ const DATA = [
   ["#BCS104", "Dec 17, 1987", "John Conner", 2839.61, "Pending"],
 ];
 
+const REGEX = /\[|\{|\}|\]\"|\'/g;
+
 const filterData = (data: any[], keyword: string) => {
   return data.filter((row) =>
-    JSON.stringify(row).toLowerCase().includes(keyword)
+    JSON.stringify(row)
+      .toLowerCase()
+      .replaceAll(REGEX, "")
+      .includes(keyword.toLowerCase())
   );
 };
 
